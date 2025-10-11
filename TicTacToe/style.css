@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(80px, 100px));
+    grid-template-rows: repeat(3, minmax(80px, 100px));
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 2px solid #333;
+    font-size: 2rem;
+    display: flex;
+    border-radius: 25%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+button.restart {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1;
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button.restart:hover {
+    background-color: #2575fc;
+}
+
+.result-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 2rem;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.result-message {
+    margin-bottom: 20px;
+}
+
+button.restart-overlay {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #6a11cb;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button.restart-overlay:hover {
+    background-color: #2575fc;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, minmax(60px, 80px));
+        grid-template-rows: repeat(3, minmax(60px, 80px));
+        gap: 8px;
+    }
+
+    .cell {
+        font-size: 1.5rem;
+    }
+
+    button.restart {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .result-message {
+        font-size: 1.4rem;
+    }
+
+    button.restart-overlay {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, minmax(50px, 70px));
+        grid-template-rows: repeat(3, minmax(50px, 70px));
+        gap: 6px;
+    }
+
+    .cell {
+        font-size: 1.2rem;
+    }
+
+    button.restart {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .result-message {
+        font-size: 1.2rem;
+    }
+
+    button.restart-overlay {
+        font-size: 1rem;
+    }
+}
