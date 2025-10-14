@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netflix — Clone (Practice)</title>
+  <meta name="description" content="Pixel‑perfect Netflix landing page clone (HTML/CSS/JS) — hero, features, FAQ, responsive." />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- AOS for optional scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="nav-wrap">
+    <nav class="container nav">
+      <a href="#" class="logo">NETFLIX</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#">Help</a></li>
+        <li><button class="btn btn-signin">Sign In</button></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">Unlimited movies, TV shows and more.</h1>
+      <p class="hero-sub">Watch anywhere. Cancel anytime.</p>
+      <p class="hero-info">Ready to watch? Enter your email to create or restart your membership.</p>
+      <form class="email-form" action="#" onsubmit="return false;">
+        <label for="email" class="visually-hidden">Email</label>
+        <input id="email" type="email" placeholder="Email address" required>
+        <button class="btn btn-primary" type="submit">Get Started</button>
+      </form>
+    </div>
+  </section>
+  <!-- Features (alternate layout) -->
+  <main>
+    <section id="features" class="section features">
+      <div class="container">
+        <div class="feature" data-aos="fade-up">
+          <div class="feature-media">
+            <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9c8f7f77f2b2b0c22a3cfa1f1b645f3a" alt="Watch on TV">
+          </div>
+          <div class="feature-body">
+            <h2>Enjoy on your TV.</h2>
+            <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu‑ray players and more.</p>
+          </div>
+        </div>
+        <div class="feature reverse" data-aos="fade-up">
+          <div class="feature-media">
+            <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6c9b0b8b724b2b3f7f6ef2b1e3a6d9d7" alt="Download shows">
+          </div>
+          <div class="feature-body">
+            <h2>Download your shows to watch offline.</h2>
+            <p>Save your favourites easily and watch without an internet connection.</p>
+          </div>
+        </div>
+        <div class="feature" data-aos="fade-up">
+          <div class="feature-media">
+            <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b2a8b8f6f1a9b0c63f7c9d2e7b5b3c1" alt="Watch everywhere">
+          </div>
+          <div class="feature-body">
+            <h2>Watch everywhere.</h2>
+            <p>Stream unlimited content on multiple devices for a single account.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ Accordion -->
+    <section id="faq" class="section faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">What is Netflix?</button>
+            <div class="accordion-panel">Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">How much does Netflix cost?</button>
+            <div class="accordion-panel">Plans start at a low monthly price. Watch as much as you want, anytime.</div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">Where can I watch?</button>
+            <div class="accordion-panel">Watch anywhere — on phones, tablets, smart TVs, laptops, and streaming devices.</div>
+          </div>
+        </div>
+        <div class="faq-cta">
+          <p class="hero-info">Ready to watch? Enter your email to create or restart your membership.</p>
+          <form class="email-form" action="#" onsubmit="return false;">
+            <input id="email2" type="email" placeholder="Email address" required>
+            <button class="btn btn-primary" type="submit">Get Started</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-title">Questions? Contact us.</p>
+      </div>
+      <div class="links-grid">
+        <a href="#">FAQ</a>
+        <a href="#">Investor Relations</a>
+        <a href="#">Privacy</a>
+        <a href="#">Speed Test</a>
+        <a href="#">Help Centre</a>
+        <a href="#">Jobs</a>
+        <a href="#">Cookie Preferences</a>
+        <a href="#">Legal Notices</a>
+      </div>
+      <div class="locale">English</div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Netflix, Inc.</div>
+  </footer>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="main.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true });
+  </script>
+</body>
+</html>

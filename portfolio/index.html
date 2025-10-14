@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gopal Reddy — Portfolio</title>
+  <meta name="description" content="Modern interactive portfolio with HTML5, CSS3, JS, AOS/Typed.js animation, and dark mode support." />
+
+  <!-- Fonts and Libraries -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo">GR</div>
+          <div class="brand-text">
+            <div class="name">Gopal Reddy</div>
+          </div>
+        </div>
+        <div class="nav-links" id="nav-links" role="navigation" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+          <button class="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="intro" data-aos="fade-up">
+        <p class="chip">Hello — I'm Gopal</p>
+        <h1>
+          <span id="typed"></span><span class="cursor">_</span>
+        </h1>
+        <p class="muted">
+          I build clean, accessible web interfaces using HTML, CSS, and JavaScript. Performance, small bundles, and delightful micro-interactions excite me.
+        </p>
+        <div class="cta">
+          <a href="#contact" class="btn">Hire Me</a>
+          <a href="#projects" class="btn secondary">See Projects</a>
+        </div>
+      </div>
+
+      <div class="portrait" data-aos="fade-left">
+        <img src="./images/Photo.jpg" alt="Portrait of Gopal Reddy" />
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" data-aos="fade-up" class="about-section">
+      <h2>About</h2>
+      <p class="muted">Passionate about creating digital products that are accessible and enjoyable for all users.</p>
+      <div class="bio-layout">
+        <div data-aos="fade-right">
+          <p>
+            I don’t just write code — I craft real solutions. From speeding up apps to designing scalable systems, I aim to create smooth user journeys. Every project is a chance to level up, innovate, and leave my logic in the digital world.
+          </p>
+        </div>
+        <aside class="skill glass" data-aos="fade-left">
+          <div class="quick-title">Quick Facts</div>
+          <div class="muted quick-sub">Based in: India • Open to remote</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" data-aos="fade-up">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">HTML5</div>
+        <div class="skill">CSS3</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Responsive Design</div>
+        <div class="skill">Bootstrap</div>
+        <div class="skill">Node.js</div>
+        <div class="skill">Express.js</div>
+        <div class="skill">Java</div>
+        <div class="skill">Python</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" data-aos="fade-up">
+      <h2>Projects</h2>
+      <p class="muted">A selection of projects. Hover/click for more details.</p>
+      <div class="projects-grid">
+
+        <!-- Project 1: Netflix Clone -->
+        <article class="project-card interactive" tabindex="0" data-aos="fade-up" data-aos-delay="150">
+          <img src="./images/project 1 logo.avif" alt="Netflix Landing Page Clone">
+          <div class="content">
+            <h3>Netflix Landing Page Clone</h3>
+            <p class="muted">Pixel-perfect clone of Netflix landing page built with HTML, CSS, JS. Includes hero, features, FAQ, and responsive design.</p>
+            <button class="view-details-btn">See Details</button>
+          </div>
+          <div class="overlay" aria-modal="true" role="dialog" aria-label="Netflix Clone Details">
+            <h4>Netflix Landing Page Clone</h4>
+            <p>Clean UI, interactive FAQ accordion, responsive layout, and email signup form (static clone).</p>
+            <a href="projects/netflix-clone/index.html" target="_blank" class="btn secondary">View Demo</a>
+            <a href="https://github.com/GopalReddy-gbr/Web-Projects/tree/main/netflix%20Landing%20page" target="_blank" class="btn secondary">Source Code</a>
+            <button class="close-overlay">Close</button>
+          </div>
+        </article>
+
+        <!-- Project 2: Text to Voice & Speech to Text  -->
+        <article class="project-card interactive" tabindex="0" data-aos="fade-up" data-aos-delay="150">
+          <img src="./images/project 2 logo.avif" alt="Text to Voice & Speech to Text">
+          <div class="content">
+            <h3>Text to Voice & Speech to Text</h3>
+            <p class="muted">Convert text into speech and speech into text in real-time using the Web Speech API. Built with HTML, CSS, and JS.</p>
+            <button class="view-details-btn">See Details</button>
+          </div>
+          <div class="overlay" aria-modal="true" role="dialog" aria-label="TTS STT Project Details">
+            <h4>Text to Voice & Speech to Text</h4>
+            <p>
+              Convert text to speech and transcribe speech to text in real-time, with interactive buttons, smooth gradients, and a responsive, clean UI.
+            </p>
+
+            <a href="projects/TTS & STT/index.html" target="_blank" class="btn secondary">View Demo</a>
+            <a href="https://github.com/GopalReddy-gbr/Web-Projects/tree/main/TTS%20%26%20STT" target="_blank" class="btn secondary">Source Code</a>
+            <button class="close-overlay">Close</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" data-aos="fade-up">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="muted">Let's discuss your project or opportunity.</p>
+
+    <div class="contact-box glass">
+      <div class="social-links">
+        <a href="https://github.com/GopalReddy-gbr" target="_blank" rel="noopener">GitHub</a> •
+        <a href="https://www.linkedin.com/in/gopal-reddy-45b3a9331/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p style="margin-top:1rem;">
+        Prefer email? <br>
+        <a href="mailto:gopalreddygbr001@gmail.com">gopalreddygbr001@gmail.com</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="muted">© 2025 Gopal Reddy • Built with ❤️ and code
+</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
