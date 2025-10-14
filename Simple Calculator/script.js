@@ -1,81 +1,56 @@
-const cells = document.querySelectorAll('.cell');
-const statusText = document.querySelector('.status');
-const restartBtn = document.querySelector('.restart');
-let currentPlayer = "X";
-let gameActive = true;
-let gameState = ["", "", "", "", "", "", "", "", ""];
+let currentInput = '';
+let operator = '';
+let previousInput = '';
+let resultDisplayed = false;
 
-// Winning combinations
-const winningConditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-];
+const screen = document.getElementById('screen');
 
-// Handle cell click
-cells.forEach(cell => {
-    cell.addEventListener('click', () => handleCellClick(cell));
+function updateScreen(value) {
+  screen.textContent = value;
+}
+
+document.querySelectorAll('.btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const value = this.getAttribute('data-value');
+    if (!isNaN(value) || value === '.') {
+      // Handle number input
+      if (resultDisplayed) {
+        currentInput = value;
+        resultDisplayed = false;
+      } else {  
+        currentInput += value;
+      }
+      updateScreen(currentInput);
+    } else if (['+', '-', '*', '/'].includes(value)) {
+      // Handle operators
+      operator = value;
+      previousInput = currentInput;
+      currentInput = '';
+    } else if (value === '=') {
+      // Calculate result
+      let result;
+      switch(operator) {
+        case '+':
+          result = parseFloat(previousInput) + parseFloat(currentInput);
+          break;
+        case '-':
+          result = parseFloat(previousInput) - parseFloat(currentInput);
+          break;
+        case '*':
+          result = parseFloat(previousInput) * parseFloat(currentInput);
+          break;
+        case '/':
+          result = parseFloat(previousInput) / parseFloat(currentInput);
+          break;
+      }
+      updateScreen(result);
+      currentInput = result + '';
+      resultDisplayed = true;
+    } else if (value === 'clear') {
+      currentInput = '';
+      previousInput = '';
+      operator = '';
+      updateScreen('0');
+    }
+  });
 });
-
-function handleCellClick(cell) {
-    const cellIndex = cell.getAttribute('data-index');
-
-    if (gameState[cellIndex] !== "" || !gameActive) {
-        return;
-    }
-
-    gameState[cellIndex] = currentPlayer;
-    cell.textContent = currentPlayer;
-
-    checkWinner();
-}
-
-function checkWinner() {
-    let roundWon = false;
-
-    for (let i = 0; i < winningConditions.length; i++) {
-        const winCondition = winningConditions[i];
-        let a = gameState[winCondition[0]];
-        let b = gameState[winCondition[1]];
-        let c = gameState[winCondition[2]];
-
-        if (a === '' || b === '' || c === '') {
-            continue;
-        }
-
-        if (a === b && b === c) {
-            roundWon = true;
-            break;
-        }
-    }
-
-    if (roundWon) {
-        statusText.textContent = `${currentPlayer} has won!`;
-        gameActive = false;
-        return;
-    }
-
-    if (!gameState.includes("")) {
-        statusText.textContent = `It's a draw!`;
-        gameActive = false;
-        return;
-    }
-
-    currentPlayer = currentPlayer === "X" ? "O" : "X";
-}
-
-// Restart game
-restartBtn.addEventListener('click', restartGame);
-
-function restartGame() {
-    currentPlayer = "X";
-    gameState = ["", "", "", "", "", "", "", "", ""];
-    statusText.textContent = "";
-    cells.forEach(cell => cell.textContent = "");
-    gameActive = true;
-}
